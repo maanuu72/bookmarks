@@ -1,27 +1,26 @@
 # Bookmarks
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.6.
+The goal of this project is manage bookmarks. You can add or delete which you want
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Bookmarks list
+![Alt text](src/screenshots/list.PNG "Optional Title")
 
-## Code scaffolding
+## Bookmarks table
+![Alt text](src/screenshots/table.PNG "Optional Title")
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Bookmark form
 
-## Build
+#### Validation
+![Alt text](src/screenshots/form validation.PNG "Optional Title")
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+#### Save
+![Alt text](src/screenshots/form success.PNG "Optional Title")
 
-## Running unit tests
+#### Cancel 
+![Alt text](src/screenshots/form confirm.PNG "Optional Title")
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+#Instructions
+To start the project you have to run de command
+`yarn start` or `ng serve`
