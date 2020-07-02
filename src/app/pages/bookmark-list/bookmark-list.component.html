@@ -1,0 +1,24 @@
+<mat-card>
+  <a routerLink="/form" class="right">
+    <button mat-flat-button color="primary">
+      New bookmark <mat-icon>add</mat-icon>
+    </button>
+  </a>
+  <a routerLink="/table" class="right">
+    <button mat-flat-button color="secondary">
+      <mat-icon>table</mat-icon>
+    </button>
+  </a>
+  <h1>Bookmarks list</h1>
+  <ul *ngFor="let group of bookmarkGroups | keyvalue">
+    <li>{{group.key}}</li>
+    <ul *ngFor="let bookmark of group.value">
+      <li>
+        {{bookmark.name}} - <a [href]="bookmark.url" target="_blank">{{bookmark.url}}</a>
+        <button mat-flat-button color="warn" class="ml-15 mb-10" (click)="delete(bookmark)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </li>
+    </ul>
+  </ul>
+</mat-card>
