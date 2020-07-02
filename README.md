@@ -13,23 +13,31 @@ I want you to know that:
 but I know that they are important and I use to do both
 
 ## Bookmarks list
+
 ![Alt text](src/screenshots/list.PNG "Optional Title")
 
 ## Bookmarks table
+
 ![Alt text](src/screenshots/table.PNG "Optional Title")
+
+
 
 ## Bookmark form
 
 #### Validation
+
 ![Alt text](src/screenshots/form_validation.PNG "Optional Title")
 
 #### Save
+
 ![Alt text](src/screenshots/form_success.PNG "Optional Title")
 
 #### Cancel 
+
 ![Alt text](src/screenshots/form_confirm.PNG "Optional Title")
 
 
 #Instructions
+
 To start the project you have to run de command
 `yarn start` or `ng serve`
