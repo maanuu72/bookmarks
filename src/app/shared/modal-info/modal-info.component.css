@@ -1,0 +1,25 @@
+.icono {
+  margin: 0 auto 15px auto;
+  display: block;
+  width: 50px;
+}
+
+.icono em {
+  font-size: 50px;
+}
+
+.error em {
+  color: #f44336;
+}
+
+.success em {
+  color: #1240ab;
+}
+
+.warning em {
+  color: #ffaa00;
+}
+
+.boton {
+  margin: 0 auto;
+}
