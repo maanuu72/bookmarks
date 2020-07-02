@@ -37,7 +37,7 @@ but I know that they are important and I use to do both
 ![Alt text](src/screenshots/form_confirm.PNG "Optional Title")
 
 
-#Instructions
+## Instructions
 
 To start the project you have to run de command
 `yarn start` or `ng serve`
