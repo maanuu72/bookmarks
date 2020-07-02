@@ -1,0 +1,27 @@
+<mat-card class="center">
+  <h1>New bookmark</h1>
+  <form [formGroup]="bookmarkForm" (ngSubmit)="onSubmit()">
+    <mat-form-field class="field">
+      <label>
+        <input matInput formControlName="name" type="text" placeholder="Name">
+      </label>
+      <mat-error *ngIf="bookmarkForm.get('name').hasError('required')">Required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="field">
+      <label>
+        <input matInput formControlName="url" type="text" placeholder="URL">
+      </label>
+      <mat-error *ngIf="bookmarkForm.get('url').hasError('required')">Required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="field">
+      <label>
+        <input matInput formControlName="group" type="text" placeholder="Group">
+      </label>
+    </mat-form-field>
+
+    <button mat-flat-button color="primary" type="submit">Save</button>
+    <button mat-flat-button color="secondary" class="right" (click)="cancel()">Cancel</button>
+  </form>
+</mat-card>
