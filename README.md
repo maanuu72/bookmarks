@@ -21,13 +21,13 @@ but I know that they are important and I use to do both
 ## Bookmark form
 
 #### Validation
-![Alt text](src/screenshots/form validation.PNG "Optional Title")
+![Alt text](src/screenshots/form_validation.PNG "Optional Title")
 
 #### Save
-![Alt text](src/screenshots/form success.PNG "Optional Title")
+![Alt text](src/screenshots/form_success.PNG "Optional Title")
 
 #### Cancel 
-![Alt text](src/screenshots/form confirm.PNG "Optional Title")
+![Alt text](src/screenshots/form_confirm.PNG "Optional Title")
 
 
 #Instructions
