@@ -1,15 +1,16 @@
 <mat-card>
-  <a routerLink="/form" class="right">
-    <button mat-flat-button color="primary">
-      New bookmark <mat-icon>add</mat-icon>
-    </button>
-  </a>
-  <a routerLink="/table" class="right">
+  <h1 class="title">Bookmarks list</h1>
+  <a class="button" routerLink="/table">
     <button mat-flat-button color="secondary">
       <mat-icon>table</mat-icon>
     </button>
   </a>
-  <h1>Bookmarks list</h1>
+  <a  class="button" routerLink="/form">
+    <button mat-flat-button color="primary">
+      New bookmark <mat-icon>add</mat-icon>
+    </button>
+  </a>
+
   <ul *ngFor="let group of bookmarkGroups | keyvalue">
     <li>{{group.key}}</li>
     <ul *ngFor="let bookmark of group.value">

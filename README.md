@@ -2,6 +2,9 @@
 
 The goal of this project is manage bookmarks. You can add or delete which you want
 
+In AppComponent, I initialize the store so as to can see information at the begining
+
+In shared folder, I created a component which is used in multiple components
 
 ## Bookmarks list
 ![Alt text](src/screenshots/list.PNG "Optional Title")
