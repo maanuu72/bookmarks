@@ -13,7 +13,7 @@ export class BookmarkEffects {
       ofType(BookmarkActions.addBookmark),
       mergeMap(action => {
         try {
-          BookmarkActions.addBookmarkSuccess({newBookmark: action.newBookmark});
+          return of(BookmarkActions.addBookmarkSuccess({newBookmark: action.newBookmark}));
         } catch (error) {
           return of(BookmarkActions.addBookmarkError({error: error.stack}));
         }
@@ -26,7 +26,7 @@ export class BookmarkEffects {
       ofType(BookmarkActions.deleteBookmark),
       mergeMap(action => {
         try {
-          BookmarkActions.deleteBookmarkSuccess({deleteBookmark: action.deleteBookmark});
+          return of(BookmarkActions.deleteBookmarkSuccess({deleteBookmark: action.deleteBookmark}));
         } catch (error) {
           return of(BookmarkActions.deleteBookmarkError({error: error.stack}));
         }
