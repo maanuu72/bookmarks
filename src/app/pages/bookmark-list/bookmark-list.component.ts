@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {BookmarkData} from '../../models/bookmark-data';
 import {Observable} from 'rxjs';
 import {BookmarkStoreService} from '../../core/store/bookmark/bookmark.service';
+import {ModalInfoComponent} from '../../shared/modal-info/modal-info.component';
+import {MatDialog} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-bookmark-list',
@@ -13,7 +15,7 @@ export class BookmarkListComponent implements OnInit {
   bookmarks$: Observable<BookmarkData[]>;
   bookmarkGroups;
 
-  constructor(private bookmarkStoreService: BookmarkStoreService) {
+  constructor(private bookmarkStoreService: BookmarkStoreService, private dialog: MatDialog) {
   }
 
   ngOnInit(): void {
@@ -33,6 +35,16 @@ export class BookmarkListComponent implements OnInit {
     });
   }
   delete(bookmark){
-    this.bookmarkStoreService.deleteBookmark(bookmark);
+    this.dialog.open(ModalInfoComponent, {
+      data: {
+        tipo: 'confirm',
+        msg: `Are you sure?`
+      },
+      width: '350px'
+    }).afterClosed().subscribe(result => {
+      if (result !== undefined) {
+        this.bookmarkStoreService.deleteBookmark(bookmark);
+      }
+    });
   }
 }
