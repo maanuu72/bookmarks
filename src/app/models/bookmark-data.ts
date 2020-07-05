@@ -3,7 +3,3 @@ export interface BookmarkData {
   url: string;
   group: string;
 }
-
-export interface BookmarksData {
-  list: BookmarkData[];
-}

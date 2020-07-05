@@ -5,13 +5,13 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {StoreModule} from '@ngrx/store';
 import {environment} from '../environments/environment';
-import {metaReducers, reducers} from './core/store/reducers';
+import {metaReducers, reducers} from '../store/reducers';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {RouterState, StoreRouterConnectingModule} from '@ngrx/router-store';
 import {EffectsModule} from '@ngrx/effects';
 
-import * as fromBookmark from './core/store/bookmark/bookmark.reducer';
-import {BookmarkEffects} from './core/store/bookmark/bookmark.effects';
+import * as fromBookmark from '../store/bookmark/bookmark.reducer';
+import {BookmarkEffects} from '../store/bookmark/bookmark.effects';
 import {BookmarkListComponent} from './pages/bookmark-list/bookmark-list.component';
 import {BookmarkFormComponent} from './pages/bookmark-form/bookmark-form.component';
 
@@ -27,8 +27,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatCardModule} from '@angular/material/card';
 import {ReactiveFormsModule} from '@angular/forms';
 import {MatDialogModule} from '@angular/material/dialog';
-import { BookmarkTableComponent } from './pages/bookmark-table/bookmark-table.component';
-import { CdkColumnDef } from '@angular/cdk/table';
+import {BookmarkTableComponent} from './pages/bookmark-table/bookmark-table.component';
+import {CdkColumnDef} from '@angular/cdk/table';
 
 @NgModule({
   declarations: [

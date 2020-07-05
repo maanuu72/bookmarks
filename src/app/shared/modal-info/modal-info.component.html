@@ -1,13 +1,13 @@
 <div mat-dialog-content>
-  <span *ngIf="data.tipo==='success'" class="icon success"><em class="material-icons">done</em></span>
-  <span *ngIf="data.tipo==='confirm'" class="icon warning"><em class="material-icons">error_outline</em></span>
+  <span *ngIf="data.type==='success'" class="icon success"><em class="material-icons">done</em></span>
+  <span *ngIf="data.type==='confirm'" class="icon warning"><em class="material-icons">error_outline</em></span>
 
   <p [innerHTML]="data.msg"></p>
 </div>
 <div mat-dialog-actions>
   <button mat-flat-button (click)="cancel()">
-    <span *ngIf="data.tipo === 'confirm'">Cancel</span>
-    <span *ngIf="data.tipo !== 'confirm'">Close</span>
+    <span *ngIf="data.type === 'confirm'">Cancel</span>
+    <span *ngIf="data.type !== 'confirm'">Close</span>
   </button>
-  <button *ngIf="data.tipo==='confirm'" mat-flat-button (click)="confirm()">Confirm</button>
+  <button *ngIf="data.type==='confirm'" mat-flat-button (click)="confirm()">Confirm</button>
 </div>

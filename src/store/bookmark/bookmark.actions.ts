@@ -1,5 +1,5 @@
 import {createAction, props} from '@ngrx/store';
-import {BookmarkData} from '../../../models/bookmark-data';
+import {BookmarkData} from '../../app/models/bookmark-data';
 
 export enum BookmarkEnum {
   AddBookmark = '[Bookmark] Add Bookmark',
@@ -27,12 +27,12 @@ export const addBookmarkError = createAction(
 
 export const deleteBookmark = createAction(
   BookmarkEnum.DeleteBookmark,
-  props<{ deleteBookmark: BookmarkData }>()
+  props<{ bookmark: BookmarkData }>()
 );
 
 export const deleteBookmarkSuccess = createAction(
   BookmarkEnum.DeleteBookmarkSuccess,
-  props<{ deleteBookmark: BookmarkData }>()
+  props<{ bookmark: BookmarkData }>()
 );
 
 export const deleteBookmarkError = createAction(

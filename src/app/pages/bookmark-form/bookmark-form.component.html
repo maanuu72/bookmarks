@@ -1,6 +1,6 @@
 <mat-card class="center">
   <h1>New bookmark</h1>
-  <form [formGroup]="bookmarkForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="bookmarkForm">
     <mat-form-field class="field">
       <label>
         <input matInput formControlName="name" type="text" placeholder="Name">
@@ -21,7 +21,7 @@
       </label>
     </mat-form-field>
 
-    <button mat-flat-button color="primary" type="submit">Save</button>
+    <button mat-flat-button color="primary" (click)="submit()">Save</button>
     <button mat-flat-button color="secondary" class="right" (click)="cancel()">Cancel</button>
   </form>
 </mat-card>

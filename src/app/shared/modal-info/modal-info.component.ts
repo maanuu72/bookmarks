@@ -1,6 +1,7 @@
 import {Component, Inject} from '@angular/core';
 import {MAT_DIALOG_DATA} from '@angular/material/dialog';
 import {MatDialogRef} from '@angular/material/dialog';
+import {ModalData} from '../../models/modal-data';
 
 @Component({
   selector: 'app-modal-info',
@@ -9,7 +10,7 @@ import {MatDialogRef} from '@angular/material/dialog';
 })
 export class ModalInfoComponent {
 
-  constructor(public dialogRef: MatDialogRef<ModalInfoComponent>, @Inject(MAT_DIALOG_DATA) public data) {
+  constructor(public dialogRef: MatDialogRef<ModalInfoComponent>, @Inject(MAT_DIALOG_DATA) public data: ModalData) {
   }
 
   confirm(): void {

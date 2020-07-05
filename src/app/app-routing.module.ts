@@ -4,7 +4,6 @@ import {BookmarkListComponent} from './pages/bookmark-list/bookmark-list.compone
 import {BookmarkFormComponent} from './pages/bookmark-form/bookmark-form.component';
 import {BookmarkTableComponent} from './pages/bookmark-table/bookmark-table.component';
 
-
 const routes: Routes = [
   {
     path: '',

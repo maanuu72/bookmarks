@@ -11,8 +11,8 @@
     </button>
   </a>
 
-  <ul *ngFor="let group of bookmarkGroups | keyvalue">
-    <li>{{group.key}}</li>
+  <div *ngFor="let group of bookmarkGroups | keyvalue">
+    <p>{{group.key}}</p>
     <ul *ngFor="let bookmark of group.value">
       <li>
         {{bookmark.name}} - <a [href]="bookmark.url" target="_blank">{{bookmark.url}}</a>
@@ -21,5 +21,5 @@
         </button>
       </li>
     </ul>
-  </ul>
+  </div>
 </mat-card>

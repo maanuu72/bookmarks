@@ -1,9 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {BookmarkStoreService} from '../../core/store/bookmark/bookmark.service';
+import {BookmarkStoreService} from '../../../store/bookmark/bookmark.service';
 import {Router} from '@angular/router';
 import {MatDialog} from '@angular/material/dialog';
 import {ModalInfoComponent} from '../../shared/modal-info/modal-info.component';
+import {ModalData} from '../../models/modal-data';
+import {BookmarkData} from '../../models/bookmark-data';
 
 @Component({
   selector: 'app-bookmark-form',
@@ -26,11 +28,13 @@ export class BookmarkFormComponent implements OnInit {
   }
 
   cancel() {
+    const modalData: ModalData = {
+      type: 'confirm',
+      msg: `Are you sure?`
+    };
+
     this.dialog.open(ModalInfoComponent, {
-      data: {
-        tipo: 'confirm',
-        msg: `Are you sure?`
-      },
+      data: modalData,
       width: '350px'
     }).afterClosed().subscribe(result => {
       if (result !== undefined) {
@@ -39,19 +43,22 @@ export class BookmarkFormComponent implements OnInit {
     });
   }
 
-  onSubmit() {
+  submit() {
     if (this.bookmarkForm.valid) {
-      const bookmark = {
+      const bookmark: BookmarkData = {
         name: this.bookmarkForm.controls.name.value,
         url: this.bookmarkForm.controls.url.value,
         group: this.bookmarkForm.controls.group.value,
       }
       this.bookmarkStoreService.addBookmark(bookmark);
+
+      const modalData: ModalData = {
+        type: 'success',
+        msg: `Bookmark created`
+      };
+
       this.dialog.open(ModalInfoComponent, {
-        data: {
-          tipo: 'success',
-          msg: `Bookmark created`
-        },
+        data: modalData,
         width: '350px'
       }).afterClosed().subscribe(result => {
         this.router.navigate(['']);

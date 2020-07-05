@@ -1,16 +1,11 @@
 import {Action, createReducer, on} from '@ngrx/store';
 import * as BookmarkActions from './bookmark.actions';
-import {BookmarksData} from '../../../models/bookmark-data';
+import {BookmarksState} from '../../app/models/bookmarks-state';
 
 export const bookmarkFeatureKey = 'Bookmark';
 
-export interface BookmarksState {
-  bookmarks: BookmarksData;
-  error;
-}
-
 export const bookmarksInitialState: BookmarksState = {
-  bookmarks: {list: []},
+  bookmarks: [],
   error: null
 };
 
@@ -19,19 +14,13 @@ const bookmarksReducer = createReducer(
   on(BookmarkActions.addBookmark,(state, {newBookmark}) => {
     return {
       ...state,
-      bookmarks: {
-        ...state.bookmarks,
-        list: [...state.bookmarks.list, newBookmark]
-      }
+      bookmarks: [...state.bookmarks, newBookmark]
     };
   }),
-  on(BookmarkActions.deleteBookmark, (state, {deleteBookmark}) => {
+  on(BookmarkActions.deleteBookmark, (state, {bookmark}) => {
     return {
       ...state,
-      bookmarks: {
-        ...state.bookmarks,
-        list: [...state.bookmarks.list.filter(bookmarks => bookmarks.name !== deleteBookmark.name)]
-      }
+      bookmarks: [...state.bookmarks.filter(bookmarks => bookmarks.name !== bookmark.name)]
     };
   })
 );

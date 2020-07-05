@@ -1,43 +1,38 @@
 # Bookmarks
 
-The goal of this project is manage bookmarks. You can add or delete which you want
+The goal of this project is manage bookmarks. You can add or delete which you want.
 
-In AppComponent, I initialize the store so as to can see information at the begining
+I have used NGRX Store so as to can manage bookmarks state. 
 
-In shared folder, I created a component which is used in multiple components
+Also, I included "error" property in store state to be able to log the last error and I installed NGRX store dev tols to help debugging.
 
-I want you to know that:
-- I didn't used git branches because of the hurry
-- I didn't comment because of the simplicity
+I have created 3 components:
 
-but I know that they are important and I use to do both
+- BookmarkListComponent and BookmarkTableComponent are two components which show you the bookmarks state.
+- BookmarkFormComponent is used to create bookmarks.
 
-## Bookmarks list
-
-![Alt text](src/screenshots/list.PNG "Optional Title")
-
-## Bookmarks table
-
-![Alt text](src/screenshots/table.PNG "Optional Title")
-
-
-
-## Bookmark form
-
-#### Validation
+In BookmarkFormComponent, I have used ReactiveForms to validate bookmark data.
 
 ![Alt text](src/screenshots/form_validation.PNG "Optional Title")
 
-#### Save
+In BookmarkListComponent, I added the bookmark delete button.
+![Alt text](src/screenshots/list.PNG "Optional Title")
+![Alt text](src/screenshots/table.PNG "Optional Title")
 
+In shared folder, I created a component which is used in multiple components. 
+
+It is ModalInfoComponent and using it you can show a confirm or succes dialog changing parameters.
+
+#### Success
 ![Alt text](src/screenshots/form_success.PNG "Optional Title")
 
-#### Cancel 
-
+##### Cancel 
 ![Alt text](src/screenshots/form_confirm.PNG "Optional Title")
-
 
 ## Instructions
 
-To start the project you have to run de command
-`yarn start` or `ng serve`
+To start the project you have to run these commands:
+
+`npm install`
+
+`yarn start`

@@ -4,7 +4,7 @@ import {BookmarkData} from '../../models/bookmark-data';
 import {MatTableDataSource} from '@angular/material/table';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
-import {BookmarkStoreService} from '../../core/store/bookmark/bookmark.service';
+import {BookmarkStoreService} from '../../../store/bookmark/bookmark.service';
 
 @Component({
   selector: 'app-bookmark-table',
@@ -16,7 +16,7 @@ export class BookmarkTableComponent implements OnInit {
   bookmarks$: Observable<BookmarkData[]>;
   bookmarks: MatTableDataSource<BookmarkData>;
 
-  displayedColumns = ['name', 'url', 'group'];
+  displayedColumns: string[] = ['name', 'url', 'group'];
 
   paginator: MatPaginator;
   sort: MatSort;
@@ -41,7 +41,7 @@ export class BookmarkTableComponent implements OnInit {
 
   ngOnInit(): void {
     this.bookmarks$ = this.bookmarkStoreService.getBookmarks$();
-    this.bookmarks$.subscribe(data => this.bookmarks = new MatTableDataSource(data));
+    this.bookmarks$.subscribe((data: BookmarkData[]) => this.bookmarks = new MatTableDataSource(data));
   }
 
   filter(event) {
